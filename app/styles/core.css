@@ -1,0 +1,22 @@
+.core-wrapper {
+	margin: 0 auto;
+	width: 860px;
+}
+
+.header {
+	border-bottom: 1px solid #a0a0a0;
+	padding: 20px 0 20px 0;
+}
+
+.section {
+	padding: 20px 0 20px 0;
+}
+
+.footer {
+	border-top: 1px solid #a0a0a0;
+	padding: 20px 0 20px 0;
+}
+
+.footer p {
+	display: inline;
+}
