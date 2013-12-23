@@ -13,6 +13,7 @@
         <!-- build:css(.tmp) styles/main.css -->
         <!--<link rel="stylesheet" href="styles/main.css">-->
         <!-- endbuild -->
+        <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="styles/core.css">
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
@@ -28,16 +29,10 @@
 
             </div>
         </header>
-        <!-- Prototyping... -->
-        <div class="core-wrapper">
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
-            <input type="button" value="Login">
-            <p>Or</p>
-            <input type="button" value="Sign Up">
-        </div>
+        <div class="core-wrapper"></div>
         <section id="core-section">
             <div class="core-wrapper section">
+
             </div>
         </section>
         <footer id="core-footer">
@@ -45,6 +40,39 @@
                 <p>Roominate \ The Iron Yard Development Team</p>
             </div>
         </footer>
+
+        <!-- Index -->
+
+        <script type="text/template" id="index-header-template">
+            <h1 id="index-header-logo"><%= logo %></h1>
+            <div id="index-login">
+                <input type="text" placeholder="Username" class="index-form">
+                <input type="password" placeholder="Password" class="index-form">
+                <input type="button" value="Login" class="submit-btn">
+            </div>
+        </script>
+
+        <script type="text/template" id="index-section-template">
+            <h2 class="index-logo"><%= heading %></h2>
+            <div id="index-option-wrapper">
+                <a href="#"><div class="index-option">Add Company</div></a>
+                <a href="#"><div class="index-option">Join Company</div></a>
+            </div>
+        </script>
+
+        <!-- Add Company... -->
+
+        <script type="text/template" id="add-company-header-template">
+            <h1 id="add-company-header-logo" class="add-logo">Roominate</h1>
+        </script>
+
+        <script type="text/template" id="add-company-section-template">
+            <input type="text" placeholder="Company Name" class="index-form">
+            <input type="text" placeholder="Company Name" class="index-form">
+            <input type="text" placeholder="Company Name" class="index-form">
+            <input type="text" placeholder="Company Name" class="index-form">
+            <input type="button" value="Submit" class="submit-btn">
+        </script>
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->

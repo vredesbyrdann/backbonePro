@@ -43,7 +43,7 @@
 		initialize: function () {
 			console.log('IndexHeaderView...');
 		},
-		template: _.template('<%= logo %>'),
+		template: _.template($('#index-header-template').html()),
 		render: function () {
 			var html = this.template({
 				logo: this.model.get('logo'),
@@ -73,7 +73,7 @@
 		initialize: function () {
 			console.log('IndexSectionView...');
 		},
-		template: _.template('<%= heading %>'),
+		template: _.template($('#index-section-template').html()),
 		render: function () {
 			var html = this.template({
 				heading: this.model.get('heading'),
@@ -88,7 +88,8 @@
 	Roominate.Router = Backbone.Router.extend({
 		routes: {
 			'': 'index',
-			'home': 'index'
+			'home': 'index',
+			'addCompany': 'addCompany'
 		},
 		index: function () {
 			
@@ -119,7 +120,7 @@
 			// Index Section...
 			//
 			var indexSectionModel = new Roominate.Models.IndexSectionModel({
-				heading: 'It\'s an open-source conference room booking app...',
+				heading: 'It\'s an open-source conference room booking app.',
 				_id: idGenerator()
 			});
 		
@@ -130,6 +131,9 @@
 		
 			indexSectionView.render();
 		
+		},
+		addCompany: function () {
+			
 		}
 	});
 
