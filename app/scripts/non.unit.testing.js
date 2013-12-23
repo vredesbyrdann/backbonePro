@@ -1,34 +1,54 @@
-/*console.log('non.unit.testing...');
+(function () {
 
-var vredesbyrdann = new Backbone.Model({
-	name: "<script>alert('xss');</script>"
-});
+	'use strict';
 
-var escapedName = vredesbyrdann.escape('name');
-console.log(escapedName);*/
+	// Company Models will have access to User Models Collection...
 
-//(function () {
-
-	var UserModel = Backbone.Model.extend({
+	//
+	// Company Model...
+	//
+	var CompanyModel = Backbone.Model.extend({
 		initialize: function () {
 			console.log('Ready to go...');
 		},
-		mutators: {
-			fullName: {
-				get: function () {
-					return this.get('firstName') + ' ' + this.get('lastName');
-				}
+		validate: function (attrs) {
+			if (attrs.userName || attrs.email === undefined) {
+				console.log('Validation error: companyModel...');
 			}
+		},
+		mutators: {
+			getCompanyName: {
+				get: function () {
+					return 'Your Company is: ' + this.get('companyName');
+				}
+			},
+			getEmail: {
+				get: function () {
+					return 'Your email address is: ' + this.get('email');
+				}
+			},
 		}
 	}), 	
 
-	userModel = new UserModel({
-		firstName: 'Ryan',
-		lastName: 'Poplin'
+	//
+	// The Iron Yard...
+	//
+	companyModel = new CompanyModel({
+		companyName: 'The Iron Yard',
+		email: 'tiy@gmail.com'
 	});
 
-	console.log(userModel.get('fullName'));
-	console.log(userModel.get('firstName'));
-	console.log(userModel.get('lastName'));
+	console.log(companyModel.get('getCompanyName'));
+	console.log(companyModel.get('getEmail'));
 
-//})();
+	// 
+	// Byrdann Solutions...
+	//
+	var companyModel2 = new CompanyModel();
+	companyModel2.set('companyName', 'Byrdann Solutions', {validate: true});
+	companyModel2.set('email', 'email@email.com', {validate: true});
+
+	console.log(companyModel2.get('getCompanyName'));
+	console.log(companyModel2.get('getEmail'));
+
+})();
