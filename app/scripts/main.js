@@ -137,6 +137,47 @@
 			$(this.el).html(html);
 		}
 	});
+	
+	//
+	// Company Model...
+	//
+	var CompanyModel = Backbone.Model.extend({
+		initialize: function () {
+			console.log('CompanyModel is ready...');
+		},
+		validate: function (attrs) {
+			if (attrs.companyName || attrs.email === undefined) {
+				console.log('Validation error: companyModel...');
+			} else {
+				console.log('All is good...');
+			}
+		},
+		mutators: {
+			getCompanyName: {
+				get: function () {
+					return 'Your Company is: ' + this.get('companyName');
+				}
+			},
+			getEmail: {
+				get: function () {
+					return 'Your email address is: ' + this.get('email');
+				}
+			},
+		}
+	}), 	
+
+	//
+	// The Iron Yard...
+	//
+	tiyModel = new CompanyModel({
+		companyName: 'The Iron Yard',
+		email: 'tiy@gmail.com'
+	});
+	tiyModel.set('companyName', 'The Iron Yard', {validate: true});
+	tiyModel.set('email', 'tiy@tiy.com', {validate: true});
+
+	console.log(tiyModel.get('getCompanyName'));
+	console.log(tiyModel.get('getEmail'));
 
 	//
 	// Roominate Router...
