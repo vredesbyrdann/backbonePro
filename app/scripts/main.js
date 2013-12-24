@@ -83,13 +83,69 @@
 	});
 
 	//
+	// Add Company Header View...
+	//
+	Roominate.Views.AddCompanyHeaderView = Backbone.View.extend({
+		initialize: function () {
+			console.log('AddCompanyHeaderView is ready...');
+		},
+		template: _.template($('#add-company-header-template').html()),
+		render: function () {
+			var html = this.template();
+			$(this.el).html(html);
+		}
+	});
+
+	//
+	// Add Company Section View...
+	//
+	Roominate.Views.AddCompanySectionView = Backbone.View.extend({
+		initialize: function () {
+			console.log('AddCompanySectionView is ready...');
+		},
+		template: _.template($('#add-company-section-template').html()),
+		render: function () {
+			var html = this.template();
+			$(this.el).html(html);
+		}
+	});
+
+	//
+	// Join Company Header View...
+	//
+	Roominate.Views.JoinCompanyHeaderView = Backbone.View.extend({
+		initialize: function () {
+			console.log('JoinCompanyHeaderView is ready...');
+		},
+		template: _.template($('#join-company-header-template').html()),
+		render: function () {
+			var html = this.template();
+			$(this.el).html(html);
+		}
+	});
+
+	//
+	// Join Company Section View...
+	//
+	Roominate.Views.JoinCompanySectionView = Backbone.View.extend({
+		initialize: function () {
+			console.log('JoinCompanySectionView is ready...');
+		},
+		template: _.template($('#join-company-section-template').html()),
+		render: function () {
+			var html = this.template();
+			$(this.el).html(html);
+		}
+	});
+
+	//
 	// Roominate Router...
 	//
 	Roominate.Router = Backbone.Router.extend({
 		routes: {
 			'': 'index',
-			'home': 'index',
-			'addCompany': 'addCompany'
+			'addCompany': 'addCompany',
+			'joinCompany': 'joinCompany'
 		},
 		index: function () {
 			
@@ -133,7 +189,24 @@
 		
 		},
 		addCompany: function () {
-			
+			var addCompanyHeaderView = new Roominate.Views.AddCompanyHeaderView({
+				el: $('.header')
+			});
+			addCompanyHeaderView.render();
+			var addCompanySectionView = new Roominate.Views.AddCompanySectionView({
+				el: $('.section')
+			});
+			addCompanySectionView.render();
+		},
+		joinCompany: function () {
+			var joinCompanyHeaderView = new Roominate.Views.JoinCompanyHeaderView({
+				el: $('.header')
+			});
+			joinCompanyHeaderView.render();
+			var joinCompanySectionView = new Roominate.Views.JoinCompanySectionView({
+				el: $('.section')
+			});
+			joinCompanySectionView.render();
 		}
 	});
 

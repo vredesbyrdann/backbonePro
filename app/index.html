@@ -45,7 +45,7 @@
 
         <script type="text/template" id="index-header-template">
             <h1 id="index-header-logo"><%= logo %></h1>
-            <div id="index-login">
+            <div class="index-login">
                 <input type="text" placeholder="Username" class="index-form">
                 <input type="password" placeholder="Password" class="index-form">
                 <input type="button" value="Login" class="submit-btn">
@@ -53,25 +53,50 @@
         </script>
 
         <script type="text/template" id="index-section-template">
+            <div id="index-container">
             <h2 class="index-logo"><%= heading %></h2>
             <div id="index-option-wrapper">
-                <a href="#"><div class="index-option">Add Company</div></a>
-                <a href="#"><div class="index-option">Join Company</div></a>
+                <a href="#/addCompany"><div class="index-option">Add Your Company</div></a>
+                <a href="#/joinCompany"><div class="index-option">Join A Company</div></a>
+            </div>
             </div>
         </script>
 
         <!-- Add Company... -->
 
         <script type="text/template" id="add-company-header-template">
-            <h1 id="add-company-header-logo" class="add-logo">Roominate</h1>
+            <h1 id="add-company-header-logo" class="add-join-logo">Roominate</h1>
+            <nav class="index-login">
+                <a href="#/"><img src="images/options.svg" alt="icon"></a>
+            </nav>
         </script>
 
         <script type="text/template" id="add-company-section-template">
-            <input type="text" placeholder="Company Name" class="index-form">
-            <input type="text" placeholder="Company Name" class="index-form">
-            <input type="text" placeholder="Company Name" class="index-form">
-            <input type="text" placeholder="Company Name" class="index-form">
+            <div class="add-join-container">
+                <h2>Content describing how we can add legit companies to our servers, set them up on Roominate, and provide service and support...</h2>
+            <p>Another message about how to purchase and plan and validate that this person is legit to a company...just thinking here...</p>
+            </div>
+        </script>
+
+        <!-- Join Company -->
+
+        <script type="text/template" id="join-company-header-template">
+            <h1 id="join-company-header-logo" class="add-join-logo">Roominate</h1>
+            <nav class="index-login">
+                <a href="#/"><img src="images/options.svg" alt="icon"></a>
+            </nav>
+        </script>
+
+        <script type="text/template" id="join-company-section-template">
+            <div class="add-join-container">
+            <input type="text" placeholder="Company Name" class="add-join-form">
+            <input type="text" placeholder="Roominate ID" class="add-join-form">
+            <input type="text" placeholder="Username" class="add-join-form">
+            <input type="text" placeholder="Email" class="add-join-form">
+            <input type="text" placeholder="Password" class="add-join-form">
+            <input type="text" placeholder="Password" class="add-join-form">
             <input type="button" value="Submit" class="submit-btn">
+            </div>
         </script>
 
         <!-- build:js scripts/vendor.js -->

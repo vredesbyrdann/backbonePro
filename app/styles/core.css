@@ -15,7 +15,7 @@ body {
 	color: #10b5b8;
 }
 
-#index-login {
+.index-login {
 	position: absolute;
 	padding-top: 55px;
 	top: 0;
@@ -42,7 +42,23 @@ body {
 }
 
 #index-option-wrapper {
-	margin-left: 250px;
+	margin-left: 200px;
+}
+
+.add-join-form {
+	display: block;
+}
+
+.add-join-logo {
+	color: #10b5b8;
+}
+
+#index-container {
+	margin: 70px 0 70px 0;
+}
+
+.add-join-container {
+	margin: 70px 0 70px 0;
 }
 
 .index-option {
@@ -61,7 +77,7 @@ body {
 }
 
 .header {
-	border-bottom: 1px solid #a0a0a0;
+	/*border-bottom: 1px solid #a0a0a0;*/
 	padding: 50px 0 50px 0;
 	position: relative;
 }
@@ -79,7 +95,7 @@ body {
 }
 
 .footer {
-	border-top: 1px solid #a0a0a0;
+	/*border-top: 1px solid #a0a0a0;*/
 	padding: 20px 0 20px 0;
 }
 
